@@ -1,7 +1,7 @@
 // swift-tools-version:5.7
 
 //
-// This source file is part of the TemplatePackage open source project
+// This source file is part of the CardinalKit open-source project
 // 
 // SPDX-FileCopyrightText: 2022 Stanford University and the project authors (see CONTRIBUTORS.md)
 // 
@@ -12,21 +12,33 @@ import PackageDescription
 
 
 let package = Package(
-    name: "TemplatePackage",
+    name: "CardinalKitHealthKitToFHIRAdapter",
     platforms: [
         .iOS(.v16)
     ],
     products: [
-        .library(name: "TemplatePackage", targets: ["TemplatePackage"])
+        .library(name: "CardinalKitHealthKitToFHIRAdapter", targets: ["CardinalKitHealthKitToFHIRAdapter"])
+    ],
+    dependencies: [
+        .package(url: "https://github.com/apple/FHIRModels", .upToNextMinor(from: "0.4.0")),
+        .package(url: "https://github.com/StanfordBDHG/CardinalKit", .upToNextMinor(from: "0.3.3")),
+        .package(url: "https://github.com/StanfordBDHG/HealthKitOnFHIR", .upToNextMinor(from: "0.2.2"))
     ],
     targets: [
         .target(
-            name: "TemplatePackage"
+            name: "CardinalKitHealthKitToFHIRAdapter",
+            dependencies: [
+                .product(name: "CardinalKit", package: "CardinalKit"),
+                .product(name: "FHIR", package: "CardinalKit"),
+                .product(name: "HealthKitDataSource", package: "CardinalKit"),
+                .product(name: "ModelsR4", package: "FHIRModels"),
+                .product(name: "HealthKitOnFHIR", package: "HealthKitOnFHIR")
+            ]
         ),
         .testTarget(
-            name: "TemplatePackageTests",
+            name: "CardinalKitHealthKitToFHIRAdapterTests",
             dependencies: [
-                .target(name: "TemplatePackage")
+                .target(name: "CardinalKitHealthKitToFHIRAdapter")
             ]
         )
     ]

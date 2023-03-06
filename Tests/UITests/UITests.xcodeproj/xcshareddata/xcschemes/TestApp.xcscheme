@@ -31,9 +31,9 @@
       <CodeCoverageTargets>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "TemplatePackage"
-            BuildableName = "TemplatePackage"
-            BlueprintName = "TemplatePackage"
+            BlueprintIdentifier = "CardinalKitHealthKitToFHIRAdapterTests"
+            BuildableName = "CardinalKitHealthKitToFHIRAdapterTests"
+            BlueprintName = "CardinalKitHealthKitToFHIRAdapterTests"
             ReferencedContainer = "container:../..">
          </BuildableReference>
       </CodeCoverageTargets>
