@@ -7,6 +7,8 @@
 //
 
 import XCTest
+import XCTestExtensions
+import XCTHealthKit
 
 
 class TestAppUITests: XCTestCase {
@@ -17,10 +19,48 @@ class TestAppUITests: XCTestCase {
     }
     
     
-    func testCardinalKitHealthKitToFHIRAdapterTests() throws {
+    func testCardinalKitHealthKitToFHIRAdapterWithECG() throws {
         let app = XCUIApplication()
+        app.deleteAndLaunch(withSpringboardAppName: "TestApp")
+        
+        XCTAssert(app.buttons["HealthKit Authorization"].waitForExistence(timeout: 2))
+        app.buttons["HealthKit Authorization"].tap()
+        
+        try app.handleHealthKitAuthorization()
+        
+        try exitAppAndOpenHealth(.electrocardiograms)
+        
         app.launch()
         
-        XCTAssert(app.staticTexts["CardinalKitHealthKitToFHIRAdapter"].waitForExistence(timeout: 2))
+        XCTAssert(app.buttons["Pull HealthKit Data"].waitForExistence(timeout: 2))
+        app.buttons["Pull HealthKit Data"].tap()
+        
+        sleep(2)
+        
+        XCTAssert(app.buttons["Check ECG Data"].waitForExistence(timeout: 2))
+        app.buttons["Check ECG Data"].tap()
+    }
+    
+    
+    func testCardinalKitHealthKitToFHIRAdapterWithSteps() throws {
+        let app = XCUIApplication()
+        app.deleteAndLaunch(withSpringboardAppName: "TestApp")
+        
+        XCTAssert(app.buttons["HealthKit Authorization"].waitForExistence(timeout: 2))
+        app.buttons["HealthKit Authorization"].tap()
+        
+        try app.handleHealthKitAuthorization()
+        
+        try exitAppAndOpenHealth(.steps)
+        
+        app.launch()
+        
+        XCTAssert(app.buttons["Pull HealthKit Data"].waitForExistence(timeout: 2))
+        app.buttons["Pull HealthKit Data"].tap()
+        
+        sleep(2)
+        
+        XCTAssert(app.buttons["Check Stepcount Data"].waitForExistence(timeout: 2))
+        app.buttons["Check Stepcount Data"].tap()
     }
 }

@@ -6,15 +6,20 @@
 // SPDX-License-Identifier: MIT
 //
 
-import CardinalKitHealthKitToFHIRAdapter
 import SwiftUI
 
 
 @main
 struct UITestsApp: App {
+    @UIApplicationDelegateAdaptor(TestAppDelegate.self) var appDelegate
+    
+    
     var body: some Scene {
         WindowGroup {
-            Text("CardinalKitHealthKitToFHIRAdapter")
+            NavigationStack {
+                ContentView()
+            }
+                .cardinalKit(appDelegate)
         }
     }
 }
