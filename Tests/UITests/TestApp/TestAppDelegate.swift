@@ -7,10 +7,10 @@
 //
 
 import CardinalKit
-@preconcurrency import FHIR
-import HealthKitDataSource
-@preconcurrency import HealthKit
 import CardinalKitHealthKitToFHIRAdapter
+@preconcurrency import FHIR
+@preconcurrency import HealthKit
+import HealthKitDataSource
 import SwiftUI
 
 
