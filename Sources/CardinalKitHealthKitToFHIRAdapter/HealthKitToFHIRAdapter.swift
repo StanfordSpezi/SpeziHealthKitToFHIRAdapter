@@ -20,11 +20,31 @@ public actor HealthKitToFHIRAdapter: SingleValueAdapter {
     public typealias OutputRemovalContext = FHIR.RemovalContext
     
     
-    public init() {}
+    private let hkHealthStore: HKHealthStore?
     
     
-    public func transform(element: InputElement) throws -> OutputElement {
-        try element.resource.get()
+    public init() {
+        guard HKHealthStore.isHealthDataAvailable() else {
+            hkHealthStore = nil
+            return
+        }
+        
+        hkHealthStore = HKHealthStore()
+    }
+    
+    
+    public func transform(element: InputElement) async throws -> OutputElement {
+        if let electrocardiogram = element as? HKElectrocardiogram, let hkHealthStore {
+            async let symptoms = try electrocardiogram.symptoms(from: hkHealthStore)
+            async let voltageMeasurements = try electrocardiogram.voltageMeasurements(from: hkHealthStore)
+            
+            return try await electrocardiogram.observation(
+                symptoms: symptoms,
+                voltageMeasurements: voltageMeasurements
+            )
+        } else {
+            return try element.resource.get()
+        }
     }
     
     public func transform(removalContext: InputRemovalContext) throws -> OutputRemovalContext {
