@@ -67,6 +67,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F5B528C29BC102F002020B7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2F9F4D7A29B6BDD300ABE259 /* TestApp.entitlements */,
+				2F6D139928F5F386007C25D6 /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		2F6D138928F5F384007C25D6 = {
 			isa = PBXGroup;
 			children = (
@@ -91,11 +100,10 @@
 		2F6D139428F5F384007C25D6 /* TestApp */ = {
 			isa = PBXGroup;
 			children = (
-				2F9F4D7A29B6BDD300ABE259 /* TestApp.entitlements */,
+				2F5B528C29BC102F002020B7 /* Supporting Files */,
 				2F9F4D7329B6B91D00ABE259 /* TestAppDelegate.swift */,
 				2FA7382B290ADFAA007ACEB9 /* TestApp.swift */,
 				2F9F4D7529B6B9E800ABE259 /* ContentView.swift */,
-				2F6D139928F5F386007C25D6 /* Assets.xcassets */,
 			);
 			path = TestApp;
 			sourceTree = "<group>";
@@ -373,7 +381,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = TestApp/TestApp.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "TestApp/Supporting Files/TestApp.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
@@ -406,7 +414,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = TestApp/TestApp.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "TestApp/Supporting Files/TestApp.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
@@ -537,7 +545,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = TestApp/TestApp.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "TestApp/Supporting Files/TestApp.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
