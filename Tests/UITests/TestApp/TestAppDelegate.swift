@@ -19,7 +19,6 @@ class TestAppDelegate: CardinalKitAppDelegate {
         Configuration(standard: FHIR()) {
             if HKHealthStore.isHealthDataAvailable() {
                 HealthKit {
-                    CollectSample(HKQuantityType(.stepCount))
                     CollectSample(HKQuantityType.electrocardiogramType())
                     CollectSamples(Set(HKElectrocardiogram.correlatedSymptomTypes))
                 } adapter: {
