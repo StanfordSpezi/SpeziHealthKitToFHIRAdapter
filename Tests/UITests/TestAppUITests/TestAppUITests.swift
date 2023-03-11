@@ -27,6 +27,7 @@ class TestAppUITests: XCTestCase {
         app.buttons["HealthKit Authorization"].tap()
         
         try app.handleHealthKitAuthorization()
+        try app.handleHealthKitAuthorization()
         
         try exitAppAndOpenHealth(.electrocardiograms)
         
@@ -51,6 +52,7 @@ class TestAppUITests: XCTestCase {
         XCTAssert(app.buttons["HealthKit Authorization"].waitForExistence(timeout: 2))
         app.buttons["HealthKit Authorization"].tap()
         
+        try app.handleHealthKitAuthorization()
         try app.handleHealthKitAuthorization()
         
         try exitAppAndOpenHealth(.steps)
