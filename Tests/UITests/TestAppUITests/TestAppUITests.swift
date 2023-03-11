@@ -39,6 +39,8 @@ class TestAppUITests: XCTestCase {
         
         XCTAssert(app.buttons["Check ECG Data"].waitForExistence(timeout: 2))
         app.buttons["Check ECG Data"].tap()
+        
+        XCTAssert(app.staticTexts["Passed"].waitForExistence(timeout: 2))
     }
     
     
@@ -62,5 +64,7 @@ class TestAppUITests: XCTestCase {
         
         XCTAssert(app.buttons["Check Stepcount Data"].waitForExistence(timeout: 2))
         app.buttons["Check Stepcount Data"].tap()
+        
+        XCTAssert(app.staticTexts["Passed"].waitForExistence(timeout: 2))
     }
 }
