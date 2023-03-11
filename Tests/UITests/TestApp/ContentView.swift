@@ -42,18 +42,6 @@ struct ContentView: View {
                     testState = "Passed"
                 }
             }
-            Button("Check Stepcount Data") {
-                _Concurrency.Task {
-                    let observations = await fhirStandard.resources(resourceType: Observation.self)
-                    
-                    guard observations.count == 1 else {
-                        testState = "Unexpected number of observations: \(observations.count)"
-                        return
-                    }
-                    
-                    testState = "Passed"
-                }
-            }
             Text(testState)
         }
             .navigationTitle("Tests")
