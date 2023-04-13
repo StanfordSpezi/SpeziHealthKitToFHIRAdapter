@@ -7,9 +7,9 @@
 //
 
 import CardinalKit
-import FHIR
+import CardinalKitFHIR
+import CardinalKitHealthKit
 import HealthKit
-import HealthKitDataSource
 import HealthKitOnFHIR
 
 

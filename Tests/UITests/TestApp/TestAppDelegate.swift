@@ -8,9 +8,9 @@
 
 import CardinalKit
 import CardinalKitHealthKitToFHIRAdapter
-@preconcurrency import FHIR
+import CardinalKitFHIR
+import CardinalKitHealthKit
 @preconcurrency import HealthKit
-import HealthKitDataSource
 import SwiftUI
 
 

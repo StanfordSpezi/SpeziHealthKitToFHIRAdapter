@@ -10,14 +10,14 @@
 		2F34F72729B6A327000CDE98 /* CardinalKitHealthKitToFHIRAdapter in Frameworks */ = {isa = PBXBuildFile; productRef = 2F34F72629B6A327000CDE98 /* CardinalKitHealthKitToFHIRAdapter */; };
 		2F6D139A28F5F386007C25D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F6D139928F5F386007C25D6 /* Assets.xcassets */; };
 		2F8A431329130A8C005D2B8F /* TestAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8A431229130A8C005D2B8F /* TestAppUITests.swift */; };
-		2F9F4D6929B6AD7100ABE259 /* FHIR in Frameworks */ = {isa = PBXBuildFile; productRef = 2F9F4D6829B6AD7100ABE259 /* FHIR */; };
-		2F9F4D6D29B6AD7100ABE259 /* HealthKitDataSource in Frameworks */ = {isa = PBXBuildFile; productRef = 2F9F4D6C29B6AD7100ABE259 /* HealthKitDataSource */; };
-		2F9F4D6F29B6AD7100ABE259 /* HealthKitToFHIRAdapter in Frameworks */ = {isa = PBXBuildFile; productRef = 2F9F4D6E29B6AD7100ABE259 /* HealthKitToFHIRAdapter */; };
 		2F9F4D7229B6B0DD00ABE259 /* XCTHealthKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2F9F4D7129B6B0DD00ABE259 /* XCTHealthKit */; };
 		2F9F4D7429B6B91D00ABE259 /* TestAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9F4D7329B6B91D00ABE259 /* TestAppDelegate.swift */; };
 		2F9F4D7629B6B9E800ABE259 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9F4D7529B6B9E800ABE259 /* ContentView.swift */; };
 		2F9F4D7929B6BBDF00ABE259 /* XCTestExtensions in Frameworks */ = {isa = PBXBuildFile; productRef = 2F9F4D7829B6BBDF00ABE259 /* XCTestExtensions */; };
 		2FA7382C290ADFAA007ACEB9 /* TestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA7382B290ADFAA007ACEB9 /* TestApp.swift */; };
+		2FCB170C29E7E94200C8EEC2 /* CardinalKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2FCB170B29E7E94200C8EEC2 /* CardinalKit */; };
+		2FCB170F29E7E95900C8EEC2 /* CardinalKitHealthKit in Frameworks */ = {isa = PBXBuildFile; productRef = 2FCB170E29E7E95900C8EEC2 /* CardinalKitHealthKit */; };
+		2FCB171229E7E99D00C8EEC2 /* CardinalKitFHIR in Frameworks */ = {isa = PBXBuildFile; productRef = 2FCB171129E7E99D00C8EEC2 /* CardinalKitFHIR */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,10 +48,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F9F4D6D29B6AD7100ABE259 /* HealthKitDataSource in Frameworks */,
+				2FCB170F29E7E95900C8EEC2 /* CardinalKitHealthKit in Frameworks */,
 				2F34F72729B6A327000CDE98 /* CardinalKitHealthKitToFHIRAdapter in Frameworks */,
-				2F9F4D6929B6AD7100ABE259 /* FHIR in Frameworks */,
-				2F9F4D6F29B6AD7100ABE259 /* HealthKitToFHIRAdapter in Frameworks */,
+				2FCB171229E7E99D00C8EEC2 /* CardinalKitFHIR in Frameworks */,
+				2FCB170C29E7E94200C8EEC2 /* CardinalKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,9 +141,9 @@
 			name = TestApp;
 			packageProductDependencies = (
 				2F34F72629B6A327000CDE98 /* CardinalKitHealthKitToFHIRAdapter */,
-				2F9F4D6829B6AD7100ABE259 /* FHIR */,
-				2F9F4D6C29B6AD7100ABE259 /* HealthKitDataSource */,
-				2F9F4D6E29B6AD7100ABE259 /* HealthKitToFHIRAdapter */,
+				2FCB170B29E7E94200C8EEC2 /* CardinalKit */,
+				2FCB170E29E7E95900C8EEC2 /* CardinalKitHealthKit */,
+				2FCB171129E7E99D00C8EEC2 /* CardinalKitFHIR */,
 			);
 			productName = Example;
 			productReference = 2F6D139228F5F384007C25D6 /* TestApp.app */;
@@ -203,6 +203,8 @@
 				2F9F4D6729B6AD7100ABE259 /* XCRemoteSwiftPackageReference "CardinalKit" */,
 				2F9F4D7029B6B0DD00ABE259 /* XCRemoteSwiftPackageReference "XCTHealthKit" */,
 				2F9F4D7729B6BBDF00ABE259 /* XCRemoteSwiftPackageReference "XCTestExtensions" */,
+				2FCB170D29E7E95900C8EEC2 /* XCRemoteSwiftPackageReference "CardinalKitHealthKit" */,
+				2FCB171029E7E99D00C8EEC2 /* XCRemoteSwiftPackageReference "CardinalKitFHIR" */,
 			);
 			productRefGroup = 2F6D139328F5F384007C25D6 /* Products */;
 			projectDirPath = "";
@@ -632,15 +634,15 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/StanfordBDHG/CardinalKit.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.3.5;
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.4.1;
 			};
 		};
 		2F9F4D7029B6B0DD00ABE259 /* XCRemoteSwiftPackageReference "XCTHealthKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/StanfordBDHG/XCTHealthKit";
 			requirement = {
-				kind = upToNextMajorVersion;
+				kind = upToNextMinorVersion;
 				minimumVersion = 0.3.3;
 			};
 		};
@@ -649,7 +651,23 @@
 			repositoryURL = "https://github.com/StanfordBDHG/XCTestExtensions";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 0.3.0;
+				minimumVersion = 0.4.0;
+			};
+		};
+		2FCB170D29E7E95900C8EEC2 /* XCRemoteSwiftPackageReference "CardinalKitHealthKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/StanfordBDHG/CardinalKitHealthKit.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.1.0;
+			};
+		};
+		2FCB171029E7E99D00C8EEC2 /* XCRemoteSwiftPackageReference "CardinalKitFHIR" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/StanfordBDHG/CardinalKitFHIR.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 0.2.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -658,21 +676,6 @@
 		2F34F72629B6A327000CDE98 /* CardinalKitHealthKitToFHIRAdapter */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = CardinalKitHealthKitToFHIRAdapter;
-		};
-		2F9F4D6829B6AD7100ABE259 /* FHIR */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2F9F4D6729B6AD7100ABE259 /* XCRemoteSwiftPackageReference "CardinalKit" */;
-			productName = FHIR;
-		};
-		2F9F4D6C29B6AD7100ABE259 /* HealthKitDataSource */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2F9F4D6729B6AD7100ABE259 /* XCRemoteSwiftPackageReference "CardinalKit" */;
-			productName = HealthKitDataSource;
-		};
-		2F9F4D6E29B6AD7100ABE259 /* HealthKitToFHIRAdapter */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2F9F4D6729B6AD7100ABE259 /* XCRemoteSwiftPackageReference "CardinalKit" */;
-			productName = HealthKitToFHIRAdapter;
 		};
 		2F9F4D7129B6B0DD00ABE259 /* XCTHealthKit */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -683,6 +686,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2F9F4D7729B6BBDF00ABE259 /* XCRemoteSwiftPackageReference "XCTestExtensions" */;
 			productName = XCTestExtensions;
+		};
+		2FCB170B29E7E94200C8EEC2 /* CardinalKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2F9F4D6729B6AD7100ABE259 /* XCRemoteSwiftPackageReference "CardinalKit" */;
+			productName = CardinalKit;
+		};
+		2FCB170E29E7E95900C8EEC2 /* CardinalKitHealthKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2FCB170D29E7E95900C8EEC2 /* XCRemoteSwiftPackageReference "CardinalKitHealthKit" */;
+			productName = CardinalKitHealthKit;
+		};
+		2FCB171129E7E99D00C8EEC2 /* CardinalKitFHIR */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2FCB171029E7E99D00C8EEC2 /* XCRemoteSwiftPackageReference "CardinalKitFHIR" */;
+			productName = CardinalKitFHIR;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

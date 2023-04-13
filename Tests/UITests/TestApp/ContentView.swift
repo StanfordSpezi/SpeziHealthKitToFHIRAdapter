@@ -6,10 +6,10 @@
 // SPDX-License-Identifier: MIT
 //
 
-
-@preconcurrency import FHIR
-import HealthKitDataSource
+@preconcurrency import CardinalKitFHIR
+import CardinalKitHealthKit
 import SwiftUI
+
 
 
 struct ContentView: View {
