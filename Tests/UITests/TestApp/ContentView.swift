@@ -11,7 +11,6 @@ import CardinalKitHealthKit
 import SwiftUI
 
 
-
 struct ContentView: View {
     @EnvironmentObject var healthKitComponent: HealthKit<FHIR>
     @EnvironmentObject var fhirStandard: FHIR
