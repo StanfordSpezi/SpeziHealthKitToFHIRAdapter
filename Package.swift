@@ -20,8 +20,10 @@ let package = Package(
         .library(name: "CardinalKitHealthKitToFHIRAdapter", targets: ["CardinalKitHealthKitToFHIRAdapter"])
     ],
     dependencies: [
-        .package(url: "https://github.com/apple/FHIRModels", .upToNextMinor(from: "0.4.0")),
-        .package(url: "https://github.com/StanfordBDHG/CardinalKit", .upToNextMinor(from: "0.3.5")),
+        .package(url: "https://github.com/apple/FHIRModels", .upToNextMinor(from: "0.5.0")),
+        .package(url: "https://github.com/StanfordBDHG/CardinalKit", .upToNextMinor(from: "0.4.1")),
+        .package(url: "https://github.com/StanfordBDHG/CardinalKitFHIR", .upToNextMinor(from: "0.2.1")),
+        .package(url: "https://github.com/StanfordBDHG/CardinalKitHealthKit", .upToNextMinor(from: "0.1.0")),
         .package(url: "https://github.com/StanfordBDHG/HealthKitOnFHIR", .upToNextMinor(from: "0.2.3"))
     ],
     targets: [
@@ -29,8 +31,8 @@ let package = Package(
             name: "CardinalKitHealthKitToFHIRAdapter",
             dependencies: [
                 .product(name: "CardinalKit", package: "CardinalKit"),
-                .product(name: "FHIR", package: "CardinalKit"),
-                .product(name: "HealthKitDataSource", package: "CardinalKit"),
+                .product(name: "CardinalKitFHIR", package: "CardinalKitFHIR"),
+                .product(name: "CardinalKitHealthKit", package: "CardinalKitHealthKit"),
                 .product(name: "ModelsR4", package: "FHIRModels"),
                 .product(name: "HealthKitOnFHIR", package: "HealthKitOnFHIR")
             ]
