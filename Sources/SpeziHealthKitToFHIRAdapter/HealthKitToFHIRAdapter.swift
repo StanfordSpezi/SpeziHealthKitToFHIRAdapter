@@ -1,16 +1,16 @@
 //
-// This source file is part of the CardinalKit open-source project
+// This source file is part of the Stanford Spezi open-source project.
 //
 // SPDX-FileCopyrightText: 2022 Stanford University and the project authors (see CONTRIBUTORS.md)
 //
 // SPDX-License-Identifier: MIT
 //
 
-import CardinalKit
-import CardinalKitFHIR
-import CardinalKitHealthKit
 import HealthKit
 import HealthKitOnFHIR
+import Spezi
+import SpeziFHIR
+import SpeziHealthKit
 
 
 public actor HealthKitToFHIRAdapter: SingleValueAdapter {

@@ -1,19 +1,19 @@
 //
-// This source file is part of the CardinalKit open-source project
+// This source file is part of the Stanford Spezi open-source project.
 //
 // SPDX-FileCopyrightText: 2022 Stanford University and the project authors (see CONTRIBUTORS.md)
 //
 // SPDX-License-Identifier: MIT
 //
 
-import CardinalKitHealthKitToFHIRAdapter
 import HealthKit
 import ModelsR4
+import SpeziHealthKitToFHIRAdapter
 import XCTest
 
 
-final class CardinalKitHealthKitToFHIRAdapterTests: XCTestCase {
-    func testCardinalKitHealthKitToFHIRAdapterElementTests() async throws {
+final class SpeziHealthKitToFHIRAdapterTests: XCTestCase {
+    func testSpeziHealthKitToFHIRAdapterElementTests() async throws {
         let adapter = HealthKitToFHIRAdapter()
         
         let stepCountSample = HKQuantitySample(
@@ -39,7 +39,7 @@ final class CardinalKitHealthKitToFHIRAdapterTests: XCTestCase {
         XCTAssertEqual(quantity.value?.value?.decimal, 42)
     }
     
-    func testCardinalKitHealthKitToFHIRAdapterRemovalContextTests() async throws {
+    func testSpeziHealthKitToFHIRAdapterRemovalContextTests() async throws {
         let adapter = HealthKitToFHIRAdapter()
         
         let id = UUID()
